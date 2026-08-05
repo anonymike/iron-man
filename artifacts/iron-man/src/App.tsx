@@ -2,6 +2,7 @@ import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvide
 import { Navbar } from '@/components/ui/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { CinematicReveal } from '@/components/sections/CinematicReveal';
+import { SynthSection } from '@/components/sections/SynthSection';
 import { SystemsNominal } from '@/components/sections/SystemsNominal';
 import { Footer } from '@/components/sections/Footer';
 
@@ -13,6 +14,7 @@ function App() {
         <main>
           <Hero />
           <CinematicReveal />
+          <SynthSection />
           <SystemsNominal />
         </main>
         <Footer />
