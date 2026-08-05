@@ -23,7 +23,7 @@ export function GlobalLoader() {
 
   if (!isLoaderVisible) return null;
 
-  if (!isInitialBoot) {
+  if (!isInitialBoot || isAppReady) {
     return <MiniLoader />;
   }
 

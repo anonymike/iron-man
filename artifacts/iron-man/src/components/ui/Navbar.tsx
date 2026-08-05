@@ -25,13 +25,14 @@ export function Navbar() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-8 md:py-5">
         <a
           href="/"
+          data-page-shared="logo"
           className="flex w-[190px] items-center text-foreground md:w-[230px]"
           aria-label="ANONYMIKETECH home"
         >
           <Logo className="h-auto w-full" />
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav data-page-shared="nav" className="hidden items-center gap-8 md:flex">
           <a
             href="#synth"
             className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-foreground"

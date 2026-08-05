@@ -8,6 +8,7 @@ import { Footer } from '@/components/sections/Footer';
 import { GlobalLoader } from '@/components/loaders/GlobalLoader';
 import { LoaderProvider, useLoader } from '@/components/loaders/LoaderProvider';
 import { PremiumCursor } from '@/components/cursor/PremiumCursor';
+import { PageTransition } from '@/components/transitions/PageTransition';
 
 function AppContent() {
   const { isAppReady } = useLoader();
@@ -37,7 +38,9 @@ function App() {
     <LoaderProvider>
       <GlobalLoader />
       <PremiumCursor />
-      <AppContent />
+      <PageTransition>
+        <AppContent />
+      </PageTransition>
     </LoaderProvider>
   );
 }

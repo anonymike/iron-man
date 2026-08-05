@@ -1,3 +1,4 @@
 - [ANONYMIKETECH brand system](anonymiketech-brand-system.md) — keep all brand marks centralized through the reusable SVG Logo/BrandMark components.
 - [Global boot behavior](global-boot-system.md) — the official MP4 gates first reveal; heavy cinematic frames continue loading in the background.
 - [Premium cursor system](premium-cursor-system.md) — keep cursor effects RAF-driven, delegated, GPU-friendly, and disabled for coarse pointers/reduced motion.
+- [Cinematic page transitions](cinematic-page-transitions.md) — keep navigation transitions history-driven and coordinate scroll restoration through the Lenis bridge.
