@@ -3,7 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 import { HudFrame } from "@/components/ui/HudFrame";
-import { Logo } from "@/components/ui/Logo";
+import {
+  useLoadingReady,
+  useLoadingReporter,
+} from "@/components/loaders/LoaderProvider";
 import { BEATS, CINE_FRAME_COUNT, cineFramePath } from "@/lib/cinematic";
 
 export function CinematicReveal() {
@@ -21,9 +24,10 @@ export function CinematicReveal() {
   const lastFrameRef = useRef(-1);
   const prevVisibleIdsRef = useRef("");
 
-  const [loadProgress, setLoadProgress] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [visibleBeats, setVisibleBeats] = useState<Set<string>>(new Set());
+  const reportLoadingProgress = useLoadingReporter("cinematic-frames");
+  const markLoadingReady = useLoadingReady("cinematic-frames");
 
   useEffect(() => {
     let cancelled = false;
@@ -36,7 +40,9 @@ export function CinematicReveal() {
       img.onload = () => {
         if (cancelled) return;
         loadedCount++;
-        setLoadProgress(loadedCount / CINE_FRAME_COUNT);
+        const progress = loadedCount / CINE_FRAME_COUNT;
+        reportLoadingProgress(progress);
+        if (i === 1) markLoadingReady();
         if (loadedCount === CINE_FRAME_COUNT) {
           loadedRef.current = true;
           setLoaded(true);
@@ -45,7 +51,9 @@ export function CinematicReveal() {
       img.onerror = () => {
         if (cancelled) return;
         loadedCount++;
-        setLoadProgress(loadedCount / CINE_FRAME_COUNT);
+        const progress = loadedCount / CINE_FRAME_COUNT;
+        reportLoadingProgress(progress);
+        if (i === 1) markLoadingReady();
         if (loadedCount === CINE_FRAME_COUNT) {
           loadedRef.current = true;
           setLoaded(true);
@@ -58,7 +66,7 @@ export function CinematicReveal() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [markLoadingReady, reportLoadingProgress]);
 
   const drawFrame = useCallback((index: number) => {
     const canvas = canvasRef.current;
@@ -364,21 +372,6 @@ export function CinematicReveal() {
           </a>
         </div>
 
-        {!loaded && (
-          <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-5 bg-background px-6">
-            <Logo animated className="h-auto w-[min(420px,78vw)]" />
-            <EyebrowBadge>SYSTEM LOG // RESTORING</EyebrowBadge>
-            <div className="h-px w-60 bg-white/10 md:w-80">
-              <div
-                className="h-full bg-accent transition-[width] duration-150 ease-out"
-                style={{ width: `${Math.round(loadProgress * 100)}%` }}
-              />
-            </div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-500">
-              Rendering ANONYMIKETECH &nbsp;&middot;&nbsp; {Math.round(loadProgress * 100)}%
-            </p>
-          </div>
-        )}
       </div>
     </section>
   );
