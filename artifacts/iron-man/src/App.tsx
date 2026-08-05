@@ -7,6 +7,7 @@ import { SystemsNominal } from '@/components/sections/SystemsNominal';
 import { Footer } from '@/components/sections/Footer';
 import { GlobalLoader } from '@/components/loaders/GlobalLoader';
 import { LoaderProvider, useLoader } from '@/components/loaders/LoaderProvider';
+import { PremiumCursor } from '@/components/cursor/PremiumCursor';
 
 function AppContent() {
   const { isAppReady } = useLoader();
@@ -35,6 +36,7 @@ function App() {
   return (
     <LoaderProvider>
       <GlobalLoader />
+      <PremiumCursor />
       <AppContent />
     </LoaderProvider>
   );

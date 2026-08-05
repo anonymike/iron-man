@@ -307,7 +307,7 @@ export function CinematicReveal() {
               className={`pointer-events-none absolute ${position} z-20 hidden w-[420px] max-w-[90vw] md:block`}
             >
               <figure
-                className={`card-surface pointer-events-auto p-6 transition-all duration-400 ease-out ${
+                className={`card-surface cursor-reactive-card pointer-events-auto p-6 transition-all duration-400 ease-out ${
                   visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
                 }`}
               >
@@ -334,7 +334,7 @@ export function CinematicReveal() {
             return (
               <figure
                 key={b.id}
-                className={`card-surface pointer-events-auto p-5 transition-all duration-400 ease-out ${
+                className={`card-surface cursor-reactive-card pointer-events-auto p-5 transition-all duration-400 ease-out ${
                   visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                 }`}
               >

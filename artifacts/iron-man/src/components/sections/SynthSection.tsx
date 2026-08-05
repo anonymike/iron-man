@@ -70,6 +70,7 @@ export function SynthSection() {
           <AnimatedItem>
             <a
               href="#footer"
+              data-cursor-magnet
               className="group inline-flex items-center gap-2 self-start rounded-full border border-accent/35 bg-accent/[0.08] px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-accent backdrop-blur-md transition-all duration-200 hover:bg-accent/[0.14] active:translate-y-[1px]"
             >
               Follow the build
@@ -84,7 +85,7 @@ export function SynthSection() {
 
         <AnimatedSection className="relative">
           <AnimatedItem>
-            <div className="synth-console relative mx-auto max-w-[560px] overflow-hidden rounded-[28px] border border-white/10 bg-[#101012]/80 p-5 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-7">
+            <div data-synth className="synth-console cursor-reactive-card relative mx-auto max-w-[560px] overflow-hidden rounded-[28px] border border-white/10 bg-[#101012]/80 p-5 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-7">
               <div className="mb-8 flex items-center justify-between border-b border-white/8 pb-4 font-mono text-[10px] uppercase tracking-[0.26em]">
                 <span className="flex items-center gap-2 text-zinc-300">
                   <span className="synth-blink inline-block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_rgba(212,162,47,0.9)]" />
