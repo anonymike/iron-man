@@ -9,7 +9,7 @@ export function CinematicReveal() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const h2InevitableRef = useRef<HTMLHeadingElement | null>(null);
-  const h2IronManRef = useRef<HTMLHeadingElement | null>(null);
+  const h2FutureRef = useRef<HTMLHeadingElement | null>(null);
   const outroRef = useRef<HTMLDivElement | null>(null);
   const progressFillRef = useRef<HTMLDivElement | null>(null);
   const seqReadoutRef = useRef<HTMLSpanElement | null>(null);
@@ -147,9 +147,9 @@ export function CinematicReveal() {
           h2InevitableRef.current.style.opacity = String(op);
         }
 
-        if (h2IronManRef.current) {
+        if (h2FutureRef.current) {
           const op = Math.min(1, Math.max(0, (progress - 0.48) / 0.1));
-          h2IronManRef.current.style.opacity = String(op);
+          h2FutureRef.current.style.opacity = String(op);
         }
 
         if (outroRef.current) {
@@ -230,29 +230,29 @@ export function CinematicReveal() {
               className="font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl lg:text-7xl"
               style={{ transition: "opacity 240ms ease-out" }}
             >
-              I am
+              Innovating
               <br />
-              <span className="text-accent">Inevitable.</span>
+              <span className="text-accent">the Future.</span>
             </h2>
             <h2
-              ref={h2IronManRef}
+              ref={h2FutureRef}
               className="absolute inset-0 font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl lg:text-7xl"
               style={{ opacity: 0, transition: "opacity 240ms ease-out" }}
             >
-              And I am
+              ANONYMIKETECH
               <br />
-              <span className="text-accent">Iron Man.</span>
+              <span className="text-accent">SYSTEM ONLINE.</span>
             </h2>
           </div>
           <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-zinc-400 md:text-base">
-            Endgame &mdash; the snap heard across the universe. J.A.R.V.I.S. held the last frame so we could rebuild from it.
+            AI &bull; Web &bull; Cloud &bull; Internet Solutions &mdash; built for what comes next. SYSTEM ONLINE.
           </p>
         </div>
 
         <div className="pointer-events-none absolute left-6 top-20 z-10 flex items-center gap-2 md:left-10 md:top-24">
           <div className="h-px w-8 bg-accent/60" />
           <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-zinc-400">
-            Flight Log &mdash; Archived
+            Systems Log &mdash; Archived
           </span>
         </div>
 
@@ -278,8 +278,8 @@ export function CinematicReveal() {
             />
           </div>
           <div className="mx-6 flex items-center justify-between pb-4 font-mono text-[10px] uppercase tracking-[0.28em] text-zinc-500 md:mx-10">
-            <span>MARK III // ARCHIVE</span>
-            <span>J.A.R.V.I.S. // PLAYBACK</span>
+            <span>ANONYMIKETECH // ARCHIVE</span>
+            <span>SYSTEM ONLINE // PLAYBACK</span>
             <span>Scroll &darr;</span>
           </div>
         </div>
@@ -365,7 +365,7 @@ export function CinematicReveal() {
 
         {!loaded && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-5 bg-background px-6">
-            <EyebrowBadge>FLIGHT LOG // RESTORING</EyebrowBadge>
+            <EyebrowBadge>SYSTEM LOG // RESTORING</EyebrowBadge>
             <div className="h-px w-60 bg-white/10 md:w-80">
               <div
                 className="h-full bg-accent transition-[width] duration-150 ease-out"
@@ -373,7 +373,7 @@ export function CinematicReveal() {
               />
             </div>
             <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-500">
-              Rendering Mark III &nbsp;&middot;&nbsp; {Math.round(loadProgress * 100)}%
+              Rendering ANONYMIKETECH &nbsp;&middot;&nbsp; {Math.round(loadProgress * 100)}%
             </p>
           </div>
         )}
