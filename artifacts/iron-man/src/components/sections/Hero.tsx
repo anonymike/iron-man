@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 import { HudFrame } from "@/components/ui/HudFrame";
+import { Logo } from "@/components/ui/Logo";
 import { DIALOGUES, FRAME_COUNT, HERO_TEXT_FADE_END, framePath } from "@/lib/hero";
 
 export function Hero() {
@@ -347,7 +348,11 @@ export function Hero() {
 
         {!loaded && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-5 bg-background px-6">
-            <EyebrowBadge>ANONYMIKETECH // SYSTEM ONLINE</EyebrowBadge>
+            <Logo
+              animated
+              className="h-auto w-[min(520px,84vw)]"
+            />
+            <EyebrowBadge className="brand-boot-status">ANONYMIKETECH // SYSTEM ONLINE</EyebrowBadge>
             <div className="h-px w-60 bg-white/10 md:w-80">
               <div
                 className="h-full bg-accent transition-[width] duration-150 ease-out"

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 import { HudFrame } from "@/components/ui/HudFrame";
+import { Logo } from "@/components/ui/Logo";
 import { BEATS, CINE_FRAME_COUNT, cineFramePath } from "@/lib/cinematic";
 
 export function CinematicReveal() {
@@ -365,6 +366,7 @@ export function CinematicReveal() {
 
         {!loaded && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-5 bg-background px-6">
+            <Logo animated className="h-auto w-[min(420px,78vw)]" />
             <EyebrowBadge>SYSTEM LOG // RESTORING</EyebrowBadge>
             <div className="h-px w-60 bg-white/10 md:w-80">
               <div

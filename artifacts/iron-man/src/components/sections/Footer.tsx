@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "@phosphor-icons/react";
+import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   return (
@@ -9,13 +10,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-[1400px] flex-col gap-10">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.32em] text-foreground">
-              <span
-                aria-hidden
-                className="inline-block h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(212,162,47,0.9)]"
-              />
-              ANONYMIKETECH
-            </div>
+            <Logo className="h-auto w-[250px] max-w-full" />
             <p className="max-w-[38ch] font-sans text-sm leading-relaxed text-zinc-400">
               &copy; ANONYMIKETECH &mdash; Innovating the Future.
               AI &bull; Web &bull; Cloud &bull; Internet Solutions.
