@@ -11,6 +11,7 @@ import { PremiumCursor } from '@/components/cursor/PremiumCursor';
 import { PageTransition } from '@/components/transitions/PageTransition';
 import { AmbientEngine } from '@/components/ambient/AmbientEngine';
 import { GlobalHUD } from '@/components/hud/GlobalHUD';
+import { CommandPalette } from '@/components/command/CommandPalette';
 
 function AppContent() {
   const { isAppReady } = useLoader();
@@ -45,6 +46,7 @@ function App() {
       <PageTransition>
         <AppContent />
       </PageTransition>
+      <CommandPalette />
     </LoaderProvider>
   );
 }
