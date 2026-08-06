@@ -9,6 +9,7 @@ import { GlobalLoader } from '@/components/loaders/GlobalLoader';
 import { LoaderProvider, useLoader } from '@/components/loaders/LoaderProvider';
 import { PremiumCursor } from '@/components/cursor/PremiumCursor';
 import { PageTransition } from '@/components/transitions/PageTransition';
+import { AmbientEngine } from '@/components/ambient/AmbientEngine';
 
 function AppContent() {
   const { isAppReady } = useLoader();
@@ -20,6 +21,7 @@ function AppContent() {
           isAppReady ? "app-shell--ready" : ""
         }`}
       >
+        <AmbientEngine />
         <Navbar />
         <main>
           <Hero />
