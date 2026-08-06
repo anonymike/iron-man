@@ -10,6 +10,7 @@ import { LoaderProvider, useLoader } from '@/components/loaders/LoaderProvider';
 import { PremiumCursor } from '@/components/cursor/PremiumCursor';
 import { PageTransition } from '@/components/transitions/PageTransition';
 import { AmbientEngine } from '@/components/ambient/AmbientEngine';
+import { GlobalHUD } from '@/components/hud/GlobalHUD';
 
 function AppContent() {
   const { isAppReady } = useLoader();
@@ -22,6 +23,7 @@ function AppContent() {
         }`}
       >
         <AmbientEngine />
+        <GlobalHUD />
         <Navbar />
         <main>
           <Hero />

@@ -16,7 +16,7 @@
 /* The atmospheric stack sits between the shell's painted background and its
    readable content. This keeps the system visible without creating a click
    surface or competing with section copy. */
-.app-shell > *:not(.ambient-engine) {
+.app-shell > *:not(.ambient-engine):not(.global-hud) {
   position: relative;
   z-index: 2;
 }

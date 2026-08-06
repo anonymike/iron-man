@@ -3,3 +3,4 @@
 - [Premium cursor system](premium-cursor-system.md) — keep cursor effects RAF-driven, delegated, GPU-friendly, and disabled for coarse pointers/reduced motion.
 - [Cinematic page transitions](cinematic-page-transitions.md) — keep navigation transitions history-driven and coordinate scroll restoration through the Lenis bridge.
 - [Global ambient system](global-ambient-system.md) — keep ambient layers inside the shell beneath content, with transform/opacity motion and adaptive low-cost modes.
+- [Global HUD system](global-hud-system.md) — keep telemetry fixed, pointer-free, responsive, and layered above ambient effects but beneath readable content.
